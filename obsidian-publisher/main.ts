@@ -8,7 +8,7 @@ interface PublisherSettings {
 }
 
 const DEFAULT_SETTINGS: PublisherSettings = {
-  blogSourcePath: '/Users/min/Desktop/website/astro-blog/src/content/blog',
+  blogSourcePath: '/Users/min/Desktop/website/src/content/posts',
 };
 
 export default class ObsidianPublisher extends Plugin {
@@ -91,8 +91,10 @@ export default class ObsidianPublisher extends Plugin {
         await fs.copyFile(sourcePath, destPath);
         new Notice(`Copied "${file.basename}" to blog source.`);
       } else {
-        await fs.rm(destPath);
-        new Notice(`Removed "${file.basename}" from blog source.`);
+        if (await fs.stat(destPath)) {
+          await fs.rm(destPath);
+          new Notice(`Removed "${file.basename}" from blog source.`);
+        }
       }
     } catch (error) {
       console.error('Error processing file:', error);

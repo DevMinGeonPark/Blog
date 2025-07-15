@@ -6,12 +6,10 @@ export default {
     '^.+\.tsx?$': ['ts-jest', { useESM: true }],
   },
   moduleNameMapper: {
-    '^@/(.*)
-: '<rootDir>/src/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   transformIgnorePatterns: [
     '<rootDir>/node_modules/(?!(\.pnpm/)?(some-esm-package|another-esm-package)/)',
-    '\.mjs
-,
+    '\.mjs$',
   ],
 };
