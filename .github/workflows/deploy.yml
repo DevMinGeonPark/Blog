@@ -30,7 +30,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-        working-directory: ./astro-blog
 
       - name: Run tests
         run: pnpm test

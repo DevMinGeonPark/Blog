@@ -6,7 +6,7 @@ settings:
 
 importers:
 
-  .:
+  astro-blog:
     dependencies:
       '@astrojs/mdx':
         specifier: ^4.3.0
