@@ -7,6 +7,7 @@ import swup from "@swup/astro";
 import expressiveCode from "astro-expressive-code";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
+import sveltePreprocess from "svelte-preprocess";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeComponents from "rehype-components"; /* Render the custom directive content */
 import rehypeKatex from "rehype-katex";
@@ -99,7 +100,13 @@ export default defineConfig({
 				showCopyToClipboardButton: false,
 			}
 		}),
-        svelte(),
+        svelte({
+            preprocess: sveltePreprocess({
+                style: {
+                    preprocess: 'stylus'
+                }
+            })
+        }),
 		sitemap(),
 	],
 	markdown: {
