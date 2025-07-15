@@ -9,4 +9,9 @@ export default {
     '^@/(.*)
 : '<rootDir>/src/$1',
   },
+  transformIgnorePatterns: [
+    '<rootDir>/node_modules/(?!(\.pnpm/)?(some-esm-package|another-esm-package)/)',
+    '\.mjs
+,
+  ],
 };
