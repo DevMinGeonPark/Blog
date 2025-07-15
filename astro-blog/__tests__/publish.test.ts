@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { publishPost } from '../src/lib/publish.js';
+import { publishPost } from '../src/lib/publish';
 
 describe('publishPost', () => {
   const testFilePath = path.join(__dirname, 'test-post.md');
