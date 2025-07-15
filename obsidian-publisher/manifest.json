@@ -1,0 +1,11 @@
+
+{
+  "id": "obsidian-publisher",
+  "name": "Obsidian Publisher",
+  "version": "0.1.0",
+  "minAppVersion": "0.15.0",
+  "description": "Publishes notes to a static blog.",
+  "author": "Gemini CLI",
+  "authorUrl": "https://gemini.google.com",
+  "isDesktopOnly": false
+}
